@@ -1,10 +1,45 @@
 import React from "react";
 import Banner from "../Components/Banner";
+import Footer from "../Components/Footer";
+import Deadlines from "../Components/Deadlines";
+import { Link } from "react-router-dom";
+import ChatbotComponent from "../chatbot/ChatbotComponent";
+import { useState } from "react";
+import { FaRobot } from "react-icons/fa";
 
 const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div>
       <Banner />
+
+      {/* Displaying Bot */}
+
+      {/* <div className=" fixed bottom-4 right-4 ">
+      <ChatbotComponent />
+      </div> */}
+
+      <div>
+        {!isVisible && (
+          <button
+            className="fixed bottom-4 right-4 z-10"
+            onClick={toggleVisibility}
+          >
+            <FaRobot size={50} color="black" />
+          </button>
+        )}
+        {isVisible && (
+          <div className="fixed bottom-4 right-4 z-20">
+            <ChatbotComponent />
+          </div>
+        )}
+      </div>
+
+      {/* Displaying Bot */}
       <div className="w-[60%] ml-auto mr-auto mb-32">
         <h1 className=" mt-5 underline  font-bold mb-5  text-2xl ">
           Registration Rules :
@@ -20,8 +55,11 @@ const Home = () => {
             <li>
               <p>
                 An FYP group must consists of either 2 or 3 members{" "}
-                <span className=" text-red-600 text-bold ">(cross department groups are allowed)</span>. A group size
-                of 3 members from same degree program is preferable.
+                <span className=" text-red-600 text-bold ">
+                  (cross department groups are allowed)
+                </span>
+                . A group size of 3 members from same degree program is
+                preferable.
               </p>
             </li>
             <li>
@@ -44,25 +82,31 @@ const Home = () => {
           <li>
             <p>
               The CGPA greater than or equal to 2.0{" "}
-              <span className=" text-red-600 text-bold " >(not on academic warning)</span>
+              <span className=" text-red-600 text-bold ">
+                (not on academic warning)
+              </span>
             </p>
           </li>
           <li>
             <p>
-              <span className=" text-red-600 text-bold ">No deficiency: </span>Earned credit hours greater than or
-              equal to 100.
+              <span className=" text-red-600 text-bold ">No deficiency: </span>
+              Earned credit hours greater than or equal to 100.
             </p>
           </li>
           <li>
             <p>
-              <span className=" text-red-600 text-bold " >One course deficiency: </span>Earned credit hours greater
-              than or equal to 96. .
+              <span className=" text-red-600 text-bold ">
+                One course deficiency:{" "}
+              </span>
+              Earned credit hours greater than or equal to 96. .
             </p>
           </li>
           <li>
             <p>
-              <span className=" text-red-600 text-bold ">Two courses deficiency: </span>Earned credit hours greater
-              than or equal 92.
+              <span className=" text-red-600 text-bold ">
+                Two courses deficiency:{" "}
+              </span>
+              Earned credit hours greater than or equal 92.
             </p>
           </li>
         </ul>
@@ -77,7 +121,9 @@ const Home = () => {
         <p>
           1. Fill and Submit the online registration form FYP-1 Online
           Registration Form.{" "}
-          <span className=" text-red-600 text-bold ">(Only one form per group needs to be submitted.)</span>{" "}
+          <span className=" text-red-600 text-bold ">
+            (Only one form per group needs to be submitted.)
+          </span>{" "}
         </p>
 
         <p>
@@ -104,7 +150,12 @@ const Home = () => {
           group’s information. Also attach your transcripts with your
           application. You can use the template application from here.{" "}
         </p>
+        <h1 className=" text-blue-500 cursor-pointer hover:text-blue-900 ">
+          <Link to="/deadlines">Project Deadlines</Link>
+        </h1>
+        <div className="App">{/* Other components */}</div>
       </div>
+      <Footer />
     </div>
   );
 };
