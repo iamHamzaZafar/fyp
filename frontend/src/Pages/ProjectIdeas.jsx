@@ -328,7 +328,7 @@ const ProjectIdeas = () => {
 
   return (
     <>
-      <h1>Projects </h1>
+      <h1 className=" mt-5 text-center font-bold mb-5 text-black text-3xl " >Project Ideas to get inspiration </h1>
       <ProjectData data="Hello" />
     </>
   );

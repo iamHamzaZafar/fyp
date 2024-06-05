@@ -8,9 +8,7 @@ const Banner = () => {
           Final Year Project
         </h1>
       </div>
-      <div>
-        <h1>Registration Rules</h1>
-      </div>
+     
     </>
   );
 };
