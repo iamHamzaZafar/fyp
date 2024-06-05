@@ -28,7 +28,7 @@ const Navbar = () => {
 
               </li>
               <li className="px-4 hover:text-blue-700">
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
 
               </li>
               <li className="px-4 hover:text-blue-700">
