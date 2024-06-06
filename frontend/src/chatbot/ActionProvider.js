@@ -15,11 +15,24 @@ class ActionProvider {
       );
       this.updateChatbotState(message);
     };
+
+    handleAbout = () => {
+        const message = this.createChatBotMessage(
+          "This project is developed to assist to help in there final year project"
+        );
+        this.updateChatbotState(message);
+      };
   
     handleGoodbye = () => {
       const message = this.createChatBotMessage("Goodbye! Have a great day.");
       this.updateChatbotState(message);
     };
+
+    handleTalha = () => {
+      const message = this.createChatBotMessage("Talha is the project partner");
+      this.updateChatbotState(message);
+    };
+
   
     handleDefault = () => {
       const message = this.createChatBotMessage(

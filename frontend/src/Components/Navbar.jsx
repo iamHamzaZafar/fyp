@@ -16,6 +16,7 @@ const Navbar = () => {
       <div className="bg-blue-400">
         <div className="flex justify-between items-center h-[70px] w-[80%] mx-auto">
           <div>
+            {/* <h1 className=' text-3xl '>FYP PORTAL</h1> */}
             <IoLogoPolymer size={50} style={{ cursor: "pointer" }} />
           </div>
           <div className="hidden md:flex">
